@@ -1,5 +1,6 @@
 import type { AstroInstance } from 'astro';
-import { Github, Instagram } from 'lucide-astro';
+import BehanceIcon from './src/components/BehanceIcon.astro';
+import InstagramIcon from './src/components/InstagramIcon.astro';
 
 export interface SocialLink {
 	name: string;
@@ -8,20 +9,20 @@ export interface SocialLink {
 }
 
 export default {
-	title: 'SR',
+	title: 'Anastasiia Marchenko',
 	favicon: 'favicon.ico',
-	owner: 'Sara Richard',
+	owner: 'Anastasiia Marchenko',
 	profileImage: 'profile.webp',
 	socialLinks: [
 		{
-			name: 'GitHub',
-			url: 'https://github.com/rockem/astro-photography-portfolio',
-			icon: Github,
+			name: 'Behance',
+			url: 'https://www.behance.net/marchenko-art',
+			icon: BehanceIcon,
 		} as SocialLink,
 		{
 			name: 'Instagram',
-			url: 'https://www.instagram.com',
-			icon: Instagram,
+			url: 'https://www.instagram.com/_anastasiia.marchenko_/',
+			icon: InstagramIcon,
 		} as SocialLink,
 	],
 };
