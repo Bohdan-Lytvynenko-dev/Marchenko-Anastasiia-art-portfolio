@@ -1,17 +1,24 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import LandingHero from '../components/LandingHero-1.astro';
-import FeaturedGallery from '../components/FeaturedGallery.astro';
-import FeaturedWorkScroll from '../components/FeaturedWorkScroll.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
+import { getImages } from '../data/imageStore';
+
+const images = await getImages();
 ---
 
 <MainLayout>
-	<section class="relative min-h-screen items-center flex py-20 md:py-16 overflow-hidden">
-		<LandingHero />
-		<FeaturedWorkScroll />
-	</section>
+	<section class="pt-28 md:pt-32 pb-20">
+		<div class="container-custom">
+			<div class="max-w-2xl mx-auto text-center mb-12">
+				<h1 class="font-christmas text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-wide text-gray-900">
+					Children's book illustration
+				</h1>
+				<p class="text-gray-600 max-w-xl mx-auto text-base md:text-lg">
+					Children's book illustrations, character design, and picture book spreads
+				</p>
+			</div>
 
-	<section class="featured-section py-20">
-		<FeaturedGallery />
+			<PhotoGrid images={images} />
+		</div>
 	</section>
 </MainLayout>

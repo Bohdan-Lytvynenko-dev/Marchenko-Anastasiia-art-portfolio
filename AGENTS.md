@@ -31,8 +31,9 @@ A portfolio website for children's book illustrator Anastasiia Marchenko, adapte
 ### Layouts & Pages
 
 - `src/layouts/MainLayout.astro`: Base HTML layout with global head tags, metadata, navbar, main slot, and footer.
-- `src/pages/index.astro`: Homepage featuring hero introduction, featured works slider, and highlight gallery.
+- `src/pages/index.astro`: Main portfolio homepage directly rendering all illustrations via PhotoGrid.
 - `src/pages/about.astro`: About page rendering illustrator bio from `src/content/about.md`.
+- `src/pages/contact.astro`: Contact page with collaboration inquiries, areas of interest, direct email, and social links.
 - `src/pages/collections/[...collection].astro`: Dynamic collection route providing category filtering and the image grid.
 
 ### Components & Scripts

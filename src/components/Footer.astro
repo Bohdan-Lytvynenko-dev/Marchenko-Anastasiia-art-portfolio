@@ -1,5 +1,5 @@
 ---
-import siteConfig from '../../site.config.mjs';
+import siteConfig from '../../site.config.mts';
 import SocialIcon from './SocialIcon.astro';
 
 const year = new Date().getFullYear();
@@ -7,17 +7,30 @@ const owner = siteConfig.owner;
 const socialLinks = siteConfig.socialLinks;
 ---
 
-<footer class="py-10 border-t border-gray-100 mt-auto">
-	<div class="container mx-auto">
-		<div class="flex flex-col md:flex-row justify-between items-center">
-			<div class="text-sm font-sans text-gray-500 mb-4 md:mb-0">
-				© {year}
-				{owner}. All rights reserved.
+<footer class="py-12 border-t border-gray-100 mt-auto bg-white">
+	<div class="container-custom">
+		<div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+			<div class="text-base font-medium text-gray-800">
+				© {year} {owner}. All rights reserved.
 			</div>
 
-			<div class="flex space-x-6">
+			<div class="flex items-center space-x-3">
 				{socialLinks.map((socialLink) => <SocialIcon socialLink={socialLink} />)}
 			</div>
+		</div>
+
+		<div class="pt-6 border-t border-gray-100 text-xs text-gray-400 space-y-3 leading-relaxed">
+			<p>
+				All illustrations on this website are copyrighted by {owner}. The use of any images
+				from this site is strictly prohibited unless prior written permission from the artist is obtained.
+			</p>
+			<p>
+				<strong class="font-semibold text-gray-500">NO AI TRAINING:</strong> Without limiting the
+				illustrator's exclusive rights under copyright, any use of this publication or its content
+				to "train" generative artificial intelligence (AI) technologies to generate imagery is
+				expressly prohibited. The artist reserves all rights to license uses of this work for
+				generative AI training and development of such learning models.
+			</p>
 		</div>
 	</div>
 </footer>

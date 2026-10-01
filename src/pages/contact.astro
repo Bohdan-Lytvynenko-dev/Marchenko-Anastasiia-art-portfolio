@@ -1,0 +1,40 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import siteConfig from '../../site.config.mts';
+
+const email = siteConfig.email || 'marchenko.art.illustration@gmail.com';
+---
+
+<MainLayout>
+	<section class="pt-32 pb-24">
+		<div class="container-custom max-w-3xl mx-auto">
+			<div class="mb-10 text-center md:text-left">
+				<span class="block text-xs md:text-sm font-semibold tracking-widest text-gray-500 uppercase mb-3">
+					Send me a note to
+				</span>
+				<h1 class="text-3xl md:text-5xl font-bold leading-tight text-gray-900 mb-6">
+					Inquire about a collaboration or just say hello!
+				</h1>
+			</div>
+
+			<div class="space-y-8 text-gray-700 leading-relaxed text-base md:text-lg">
+				<p>
+					For new project inquiries, book illustration commissions, or collaborations, please feel free
+					to contact me directly at{' '}
+					<a
+						href={`mailto:${email}`}
+						class="text-black font-medium underline underline-offset-4 hover:text-gray-600 transition-colors"
+					>
+						{email}
+					</a>.
+				</p>
+
+				<p>
+					I am open to new children's book projects, cover art, and editorial illustration commissions.
+					If you're interested in working together, please send a note with your project details,
+					timeline, or manuscript synopsis, and I'd be happy to share my extended digital portfolio with you.
+				</p>
+			</div>
+		</div>
+	</section>
+</MainLayout>

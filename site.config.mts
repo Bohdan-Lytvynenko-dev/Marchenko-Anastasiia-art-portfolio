@@ -1,5 +1,6 @@
 import type { AstroInstance } from 'astro';
 import BehanceIcon from './src/components/BehanceIcon.astro';
+import LetterIcon from './src/components/LetterIcon.astro';
 import InstagramIcon from './src/components/InstagramIcon.astro';
 
 export interface SocialLink {
@@ -23,6 +24,11 @@ export default {
 			name: 'Instagram',
 			url: 'https://www.instagram.com/_anastasiia.marchenko_/',
 			icon: InstagramIcon,
+		} as SocialLink,
+		{
+			name: 'Contact',
+			url: '/contact',
+			icon: LetterIcon,
 		} as SocialLink,
 	],
 };

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
@@ -46,6 +47,10 @@
 	#logo {
 		font-family: 'Dancing Script', cursive;
 	}
+
+	.font-christmas {
+		font-family: 'Mountains of Christmas', cursive;
+	}
 }
 
 @layer components {
@@ -61,7 +66,8 @@
 		@apply content-[''] absolute w-0 h-[1px] bg-black bottom-[-2px] left-0 transition-all duration-300 ease-in-out;
 	}
 
-	.nav-link:hover::after {
+	.nav-link:hover::after,
+	.nav-link.active::after {
 		@apply w-full;
 	}
 }

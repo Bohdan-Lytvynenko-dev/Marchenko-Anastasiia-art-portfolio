@@ -1,14 +1,24 @@
 ---
 const { socialLink } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 const Icon = socialLink.icon;
+const isExternal =
+	socialLink.url.startsWith('http://') ||
+	socialLink.url.startsWith('https://') ||
+	socialLink.url.startsWith('mailto:');
+
+const normalizedBase = base.replace(/\/$/, '');
+const href = isExternal
+	? socialLink.url
+	: `${normalizedBase}${socialLink.url.startsWith('/') ? '' : '/'}${socialLink.url}`;
 ---
 
 <a
-	href={socialLink.url}
-	target="_blank"
-	rel="noopener noreferrer"
-	class="text-gray-500 hover:text-gray-800 transition-colors duration-200"
+	href={href}
+	target={isExternal && !socialLink.url.startsWith('mailto:') ? '_blank' : undefined}
+	rel={isExternal && !socialLink.url.startsWith('mailto:') ? 'noopener noreferrer' : undefined}
+	class="text-gray-500 hover:text-gray-800 transition-all duration-200 hover:opacity-80 inline-flex items-center justify-center"
 	aria-label={socialLink.name}
 >
 	<Icon size={20} />
