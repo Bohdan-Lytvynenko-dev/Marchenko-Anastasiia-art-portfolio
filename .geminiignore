@@ -1,0 +1,4 @@
+# .geminiignore — keeps the AI fast and saves token quota
+package-lock.json
+pnpm-lock.yaml
+public/fonts/

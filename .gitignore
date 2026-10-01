@@ -25,3 +25,13 @@ pnpm-debug.log*
 
 # app
 src/data/__tests__/gallery/gallery.yaml
+
+# Antigravity & Gemini local workspace settings/cache
+.gemini/
+.antigravity/
+AGENTS.local.md
+GEMINI.local.md
+
+# Temporary screenshots used for AI layout debugging
+screenshot*.png
+*.tmp.png
